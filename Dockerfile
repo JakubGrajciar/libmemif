@@ -1,8 +1,8 @@
 FROM ubuntu:xenial
 
-RUN apt-get update && \
-	apt-get install -y git build-essential autoconf pkg-config libtool sudo check
-RUN rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y \
+    git build-essential autoconf pkg-config libtool sudo check \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN git clone https://github.com/JakubGrajciar/libmemif.git /libmemif
 WORKDIR /libmemif
